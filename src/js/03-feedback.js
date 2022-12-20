@@ -39,15 +39,19 @@ function onSubmitForm(event) {
 
 //== (1)
 function onFormData(event) {
-    formData[event.target.name] = event.target.value;
+    // formData[event.target.name] = event.target.value;
+    formData = {
+        email: refs.email.value,
+        message: refs.email.value,
+    }
     localStorage.setItem(localFeedBackKey, JSON.stringify(formData));
 }
 
 //== (2)
 function populateTextarea() {
-    const formData = JSON.parse(localStorage.getItem(localFeedBackKey)) || {};
-       if (formData) {
-        refs.email.value = formData.email;
-           refs.message.value = formData.message;
+    if (localStorage.getItem(localFeedBackKey)) {
+        const formDataObj = JSON.parse(localStorage.getItem(localFeedBackKey)) || {};
+        refs.email.value = formDataObj.email;
+           refs.message.value = formDataObj.message;
     }
 };
