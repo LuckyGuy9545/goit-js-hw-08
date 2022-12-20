@@ -50,8 +50,8 @@ function onFormData(event) {
 //== (2)
 function populateTextarea() {
     if (localStorage.getItem(localFeedBackKey)) {
-        const formDataObj = JSON.parse(localStorage.getItem(localFeedBackKey)) || {};
-        refs.email.value = formDataObj.email;
-           refs.message.value = formDataObj.message;
+        formData = JSON.parse(localStorage.getItem(localFeedBackKey));
+        refs.email.value = formData.email;
+           refs.message.value = formData.message;
     }
 };
