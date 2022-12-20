@@ -27,12 +27,12 @@ populateTextarea();
 //== (3)
 function onSubmitForm(event) {
     event.preventDefault();
+    console.log(formData);
     if (formData.message === '' || formData.email === '') {
         alert('I need more "Data" mate');
         return;
     }
-    console.log(formData);
-    // formData = {};
+    formData = {};
   event.target.reset();
   localStorage.removeItem(localFeedBackKey);
 }
