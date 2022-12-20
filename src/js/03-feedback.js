@@ -42,7 +42,7 @@ function onFormData(event) {
     // formData[event.target.name] = event.target.value;
     formData = {
         email: refs.email.value,
-        message: refs.email.value,
+        message: refs.message.value,
     }
     localStorage.setItem(localFeedBackKey, JSON.stringify(formData));
 }
